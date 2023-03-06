@@ -4,10 +4,27 @@
     <Filter Include="Main">
       <UniqueIdentifier>{6e925215-6d38-40eb-bebf-8369ee5c787e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{dfa5675b-36ed-47f3-bc4e-62040d7f17d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{8c6521c8-9c3d-41cf-a5f9-98fc9f9b8542}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="library.h">
+      <Filter>Library</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
