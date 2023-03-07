@@ -6,43 +6,43 @@ void Print_Student(Student* student) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	cout << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Ï²Á  _______________________________ ";
+	cout << " ÐŸÐ†Ð‘  _______________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_surname() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Äàòà íàðîäæåííÿ  ___________________ ";
+	cout << " Ð”Ð°Ñ‚Ð° Ð½Ð°Ñ€Ð¾Ð´Ð¶ÐµÐ½Ð½Ñ  ___________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_date_of_birth() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Êîíòàêòíèé òåëåôîí _________________ ";
+	cout << " ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ð½Ð¸Ð¹ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½ _________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_contact_phone() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Ì³ñòî  _____________________________ ";
+	cout << " ÐœÑ–ÑÑ‚Ð¾  _____________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_city() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Êðà¿íà  ____________________________ ";
+	cout << " ÐšÑ€Ð°Ñ—Ð½Ð°  ____________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_country() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Ì³ñòî òà êðà¿íà" << endl;
-	cout << " äå çíàõîäèòüñÿ íàâ÷àëüíèé çàêëàä ___ ";
+	cout << " ÐœÑ–ÑÑ‚Ð¾ Ñ‚Ð° ÐºÑ€Ð°Ñ—Ð½Ð°" << endl;
+	cout << " Ð´Ðµ Ð·Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑŒÑÑ Ð½Ð°Ð²Ñ‡Ð°Ð»ÑŒÐ½Ð¸Ð¹ Ð·Ð°ÐºÐ»Ð°Ð´ ___ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_city_and_country_institution() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Íîìåð ãðóïè ________________________ ";
+	cout << " ÐÐ¾Ð¼ÐµÑ€ Ð³Ñ€ÑƒÐ¿Ð¸ ________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_number_groups() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Íàçâà íàâ÷àëüíîãî çàêëàäó  _________ ";
+	cout << " ÐÐ°Ð·Ð²Ð° Ð½Ð°Ð²Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð·Ð°ÐºÐ»Ð°Ð´Ñƒ  _________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_name_of_the_institution() << endl;
 
 }
 void Print_Tochka(Tochka* tochka) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	cout << " Âàø³ êîîðäèíàòè -- > ";
+	cout << " Ð’Ð°ÑˆÑ– ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸ -- > ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << tochka->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
@@ -58,7 +58,7 @@ void Print_Tochka(Tochka* tochka) {
 void Print_Drib(Drib* drib) {
 
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	//äîäàâàííÿ 
+	//Ð´Ð¾Ð´Ð°Ð²Ð°Ð½Ð½Ñ 
 	cout << endl;
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
@@ -70,7 +70,7 @@ void Print_Drib(Drib* drib) {
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << drib->get_res1() << endl;
 
-	//â³äí³ìàííÿ 
+	//Ð²Ñ–Ð´Ð½Ñ–Ð¼Ð°Ð½Ð½Ñ 
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << " - ";
@@ -81,7 +81,7 @@ void Print_Drib(Drib* drib) {
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << drib->get_res2() << endl;
 
-	//ìíîæåííÿ
+	//Ð¼Ð½Ð¾Ð¶ÐµÐ½Ð½Ñ
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << " * ";
@@ -92,7 +92,7 @@ void Print_Drib(Drib* drib) {
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << drib->get_res3() << endl;
 
-	//ä³ëåííÿ 
+	//Ð´Ñ–Ð»ÐµÐ½Ð½Ñ 
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << " / ";
@@ -117,11 +117,11 @@ int main() {
 		system("cls");
 		cout << " #===============================# " << endl;
 		cout << "  |                             |  " << endl;
-		cout << "  |      1 - class Ñòóäåíò      |  " << endl;
+		cout << "  |      1 - class Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚      |  " << endl;
 		cout << "  |                             |  " << endl;
-		cout << "  |      2 - class Òî÷êà        |  " << endl;
+		cout << "  |      2 - class Ð¢Ð¾Ñ‡ÐºÐ°        |  " << endl;
 		cout << "  |                             |  " << endl;
-		cout << "  |      3 - class Äð³á         |  " << endl;
+		cout << "  |      3 - class Ð”Ñ€Ñ–Ð±         |  " << endl;
 		cout << "  |                             |  " << endl;
 		cout << " #===============================# " << endl;
 		cout << "\n --> ";
@@ -158,7 +158,7 @@ int main() {
 			}
 			else {
 				cout << endl;
-				cout << " Âàø³ êîîðäèíàòè çàïèñàí³ ó File.txt ;)";
+				cout << " Ð’Ð°ÑˆÑ– ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ñ– Ñƒ File.txt ;)";
 				File << tochka->get_x() << "." << tochka->get_y() << "." << tochka->get_z() << endl;
 			}
 
