@@ -2,14 +2,14 @@
 
 class Student {
 private:
-    string surname = "Êîñòþ÷åíêî Êàòåðèíà Âàäèì³âíà";
+    string surname = "ÐšÐ¾ÑÑ‚ÑŽÑ‡ÐµÐ½ÐºÐ¾ ÐšÐ°Ñ‚ÐµÑ€Ð¸Ð½Ð° Ð’Ð°Ð´Ð¸Ð¼Ñ–Ð²Ð½Ð°";
     string date_of_birth = "08.06.2000";
     string contact_phone = "097 368 02 37";
-    string city = "Â³ííèöÿ";
-    string country = "Óêðà¿íà";
-    string name_of_the_institution = "Êîìï'þòåðíà Àêàäåì³ÿ STEP";
-    string city_and_country_institution = "Â³ííèöÿ,Óêðà¿íà";
-    string number_groups = "ÁÂ211";
+    string city = "Ð’Ñ–Ð½Ð½Ð¸Ñ†Ñ";
+    string country = "Ð£ÐºÑ€Ð°Ñ—Ð½Ð°";
+    string name_of_the_institution = "ÐšÐ¾Ð¼Ð¿'ÑŽÑ‚ÐµÑ€Ð½Ð° ÐÐºÐ°Ð´ÐµÐ¼Ñ–Ñ STEP";
+    string city_and_country_institution = "Ð’Ñ–Ð½Ð½Ð¸Ñ†Ñ,Ð£ÐºÑ€Ð°Ñ—Ð½Ð°";
+    string number_groups = "Ð‘Ð’211";
 public:
     void set_surname(string s) {
         this->surname = s;
@@ -77,17 +77,17 @@ private:
     int x, y, z;
 public:
     void set_x(int X) {
-        cout << " Ââåä³òü x -- > ";
+        cout << " Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ x -- > ";
         cin >> X;
         this->x = X;
     }
     void set_y(int Y) {
-        cout << " Ââåä³òü y -- > ";
+        cout << " Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ y -- > ";
         cin >> Y;
         this->y = Y;
     }
     void set_z(int Z) {
-        cout << " Ââåä³òü z -- > ";
+        cout << " Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ z -- > ";
         cin >> Z;
         this->z = Z;
     }
@@ -114,13 +114,13 @@ private:
 public:
     void set_x(double X)
     {
-        cout << "Ââåä³òü ÷èñëî --> ";
+        cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾ --> ";
         cin >> X;
         this->x = X;
     }
     void set_y(double Y)
     {
-        cout << "Ââåä³òü ÷èñëî --> ";
+        cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾ --> ";
         cin >> Y;
         this->y = Y;
     }
