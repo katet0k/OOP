@@ -104,6 +104,65 @@ void Print_Drib(Drib* drib) {
 	cout << drib->get_res4() << endl;
 
 }
+void Print_Phanebookk(Phone_book* phone_book) {
+	string Name;
+	string Home_phone;
+	string Work_phone;
+	string Cellphone;
+	string Info;
+	string Prof = {
+		"  O \n"
+		" (_) " };
+
+
+	Name = "Bob";
+	Home_phone = "098 777 66 62";
+	Work_phone = "098 777 66 61";
+	Cellphone = "098 777 66 60";
+	Info = "Немає додаткової інформації";
+	phone_book->set_Name(Name);
+	phone_book->set_HomePhone(Home_phone);
+	phone_book->set_WorkPhone(Work_phone);
+	phone_book->set_Cellphone(Cellphone);
+	phone_book->set_Info(Info);
+	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
+	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
+	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
+	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
+	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl << endl;
+
+	Name = "Daria";
+	Home_phone = "098 687 98 09";
+	Work_phone = "096 686 66 98";
+	Cellphone = "098 789 34 53";
+	Info = "Немає додаткової інформації";
+	phone_book->set_Name(Name);
+	phone_book->set_HomePhone(Home_phone);
+	phone_book->set_WorkPhone(Work_phone);
+	phone_book->set_Cellphone(Cellphone);
+	phone_book->set_Info(Info);
+	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
+	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
+	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
+	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
+	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
+	Name = "Tom";
+	Home_phone = "098 234 45 12";
+	Work_phone = "098 468 66 34";
+	Cellphone = "097 753 43 33";
+	Info = "Немає додаткової інформації";
+	phone_book->set_Name(Name);
+	phone_book->set_HomePhone(Home_phone);
+	phone_book->set_WorkPhone(Work_phone);
+	phone_book->set_Cellphone(Cellphone);
+	phone_book->set_Info(Info);
+	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
+	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
+	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
+	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
+	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
+
+}
 void Print_Phanebook(Phone_book* phone_book, char switch_on1) {
 	string Name;
 	string Home_phone;
@@ -114,57 +173,8 @@ void Print_Phanebook(Phone_book* phone_book, char switch_on1) {
 		"  O \n"
 	    " (_) " };
 	
-		Name = "Bob";
-		Home_phone = "098 777 66 62";
-		Work_phone = "098 777 66 61";
-		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
-		phone_book->set_Name(Name);
-		phone_book->set_HomePhone(Home_phone);
-		phone_book->set_WorkPhone(Work_phone);
-		phone_book->set_Cellphone(Cellphone);
-		phone_book->set_Info(Info);
-		cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-		cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-		cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-		cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-		cout << "     Додаткова інформація : " << phone_book->get_Info() << endl << endl;
-
-		Name = "Daria";
-		Home_phone = "098 687 98 09";
-		Work_phone = "096 686 66 98";
-		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
-		phone_book->set_Name(Name);
-		phone_book->set_HomePhone(Home_phone);
-		phone_book->set_WorkPhone(Work_phone);
-		phone_book->set_Cellphone(Cellphone);
-		phone_book->set_Info(Info);
-		cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-		cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-		cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-		cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-		cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-		Name = "Tom";
-		Home_phone = "098 234 45 12";
-		Work_phone = "098 468 66 34";
-		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
-		phone_book->set_Name(Name);
-		phone_book->set_HomePhone(Home_phone);
-		phone_book->set_WorkPhone(Work_phone);
-		phone_book->set_Cellphone(Cellphone);
-		phone_book->set_Info(Info);
-		cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-		cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-		cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-		cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-		cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-	
+		
 	if (switch_on1 == '1') {
-
-	}
-	if (switch_on1 == '3') {
 		cout << " ПІБ --> ";
 		cin >> Name;
 		cout << " Домашній телефон --> ";
@@ -185,8 +195,15 @@ void Print_Phanebook(Phone_book* phone_book, char switch_on1) {
 		cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
 		cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
 		cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-
 	}
+	system("pause");
+	system("cls");
+	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
+	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
+	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
+	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
+	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
+	Print_Phanebookk(phone_book);
 }
 
 int main() {
@@ -213,7 +230,7 @@ int main() {
 		case '0': {
 			break;
 		}break;
-		
+
 		case '1': {
 
 			Tochka* tochka = new Tochka;
@@ -258,30 +275,32 @@ int main() {
 		}break;
 		case '4': {
 			char switch_on1 = '0';
-			Phone_book * phone_book = new Phone_book;
+			Phone_book* phone_book = new Phone_book;
 			do
 			{
-				Print_Phanebook(phone_book, switch_on1);
-			menu->MenuPhone();
-			switch_on1 = _getch();
-			switch (switch_on1)
-			{
-			case '1':
-			{
-				Print_Phanebook(phone_book, switch_on1);
-				system("pause");
-			}break;
-			case '2':
-			{
-				system("pause");
-			}break;
-			case '3':
-			{
-				system("pause");
-			}break;
-			default:
-				break;
-			}
+				Print_Phanebookk(phone_book);
+				menu->MenuPhone();
+				cout << "-->";
+				switch_on1 = _getch();
+				cout << endl;
+				switch (switch_on1)
+				{
+				case '1':
+				{
+					Print_Phanebook(phone_book, switch_on1);
+					system("pause");
+				}break;
+				case '2':
+				{
+					system("pause");
+				}break;
+				case '3':
+				{
+					system("pause");
+				}break;
+				default:
+					break;
+				}
 			} while (switch_on1 != '0');
 
 			system("pause");
