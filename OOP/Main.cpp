@@ -4,9 +4,9 @@
 void Print_Worker(Worker * worker)
 {
     cout << " PIB: " << worker->get_Name() << endl;
-    cout << " Position: " << worker->get_Position << endl;
-    cout << " Year: " << worker->get_Year << endl;
-    cout << " Salary: " << worker->Salary << endl;
+    cout << " Position: " << worker->get_Position() << endl;
+    cout << " Year: " << worker->get_Year() << endl;
+    cout << " Salary: " << worker->get_Salary() << endl;
     cout << endl;
 }
 
@@ -60,7 +60,7 @@ int main()
                     book.d();
                     cout << endl;
                 }
-            }
+            } 
 
         }break;
         case '2': {
