@@ -133,3 +133,53 @@ public:
         set_y(Y);
     }
 };
+
+class Phone_book {
+private:
+    string Name;
+    string Home_phone;
+    string Work_phone;
+    string Cellphone;
+    string Info;
+
+public:
+    void set_Name(string Name) {
+        this->Name = Name;
+    }
+    void set_HomePhone(string Home_phone) {
+        this->Home_phone = Home_phone;
+    }
+    void set_WorkPhone(string Work_phone) {
+        this->Work_phone = Work_phone;
+    }
+    void set_Cellphone(string Cellphone) {
+        this->Cellphone = Cellphone;
+    }
+    void set_Info(string Info) {
+        this->Info = Info;
+    }
+
+    string get_Name() {
+        return Name;
+    }
+    string get_HomePhone() {
+        return Home_phone;
+    }
+    string get_WorkPhone() {
+        return Work_phone;
+    }
+    string get_Cellphone() {
+        return Cellphone;
+    }
+    string get_Info() {
+        return Info;
+    }
+
+    Phone_book() {
+        set_Name("Null");
+        set_HomePhone("Null");
+        set_WorkPhone("Null");
+        set_Cellphone("Null");
+        set_Info("Null");
+    }
+};

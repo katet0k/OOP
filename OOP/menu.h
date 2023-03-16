@@ -15,4 +15,14 @@ public:
 		cout << "  |                             |  " << endl;
 		cout << " #===============================# " << endl;
 	}
+	void MenuPhone() {
+		cout << endl;
+		cout << "                                                  " << endl;
+		cout << "     Для додання нового абонента натисніть -- 1   " << endl;
+		cout << "                                                  " << endl;
+		cout << "     Для Видалення абонента натисніть -- 2        " << endl;
+		cout << "                                                  " << endl;
+		cout << "     Для пошуку абонента натисніть -- 3           " << endl;
+		cout << "                                                  " << endl << endl;
+	}
 };
