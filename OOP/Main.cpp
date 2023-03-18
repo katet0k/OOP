@@ -173,7 +173,6 @@ void Print_Phanebook(Phone_book* phone_book, char switch_on1) {
 		"  O \n"
 	    " (_) " };
 	
-		
 	if (switch_on1 == '1') {
 		cout << " Ï²Á --> ";
 		cin >> Name;
