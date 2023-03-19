@@ -25,6 +25,7 @@
     <ClInclude Include="Classes.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="Print.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

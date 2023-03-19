@@ -1,209 +1,6 @@
 #include"menu.h"
 #include"Classes.h"
-
-
-void Print_Student(Student* student) {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	cout << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " ПІБ  _______________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_surname() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Дата народження  ___________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_date_of_birth() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Контактний телефон _________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_contact_phone() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Місто  _____________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_city() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Країна  ____________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_country() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Місто та країна" << endl;
-	cout << " де знаходиться навчальний заклад ___ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_city_and_country_institution() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Номер групи ________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_number_groups() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Назва навчального закладу  _________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << student->get_name_of_the_institution() << endl;
-
-}
-void Print_Tochka(Tochka* tochka) {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	cout << " Ваші координати -- > ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << tochka->get_x();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << ".";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << tochka->get_y();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << ".";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << tochka->get_z() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-}
-void Print_Drib(Drib* drib) {
-
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	//додавання 
-	cout << endl;
-	cout << drib->get_x();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " + ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_y();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " = ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_res1() << endl;
-
-	//віднімання 
-	cout << drib->get_x();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " - ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_y();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " = ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_res2() << endl;
-
-	//множення
-	cout << drib->get_x();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " * ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_y();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " = ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_res3() << endl;
-
-	//ділення 
-	cout << drib->get_x();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " / ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_y();
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
-	cout << " = ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << drib->get_res4() << endl;
-
-}
-void Print_Phanebookk(Phone_book* phone_book) {
-	string Name;
-	string Home_phone;
-	string Work_phone;
-	string Cellphone;
-	string Info;
-	string Prof = {
-		"  O \n"
-		" (_) " };
-
-
-	Name = "Bob";
-	Home_phone = "098 777 66 62";
-	Work_phone = "098 777 66 61";
-	Cellphone = "098 777 66 60";
-	Info = "Немає додаткової інформації";
-	phone_book->set_Name(Name);
-	phone_book->set_HomePhone(Home_phone);
-	phone_book->set_WorkPhone(Work_phone);
-	phone_book->set_Cellphone(Cellphone);
-	phone_book->set_Info(Info);
-	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl << endl;
-
-	Name = "Daria";
-	Home_phone = "098 687 98 09";
-	Work_phone = "096 686 66 98";
-	Cellphone = "098 789 34 53";
-	Info = "Немає додаткової інформації";
-	phone_book->set_Name(Name);
-	phone_book->set_HomePhone(Home_phone);
-	phone_book->set_WorkPhone(Work_phone);
-	phone_book->set_Cellphone(Cellphone);
-	phone_book->set_Info(Info);
-	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-	Name = "Tom";
-	Home_phone = "098 234 45 12";
-	Work_phone = "098 468 66 34";
-	Cellphone = "097 753 43 33";
-	Info = "Немає додаткової інформації";
-	phone_book->set_Name(Name);
-	phone_book->set_HomePhone(Home_phone);
-	phone_book->set_WorkPhone(Work_phone);
-	phone_book->set_Cellphone(Cellphone);
-	phone_book->set_Info(Info);
-	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-
-}
-void Print_Phanebook(Phone_book* phone_book, char switch_on1) {
-	string Name;
-	string Home_phone;
-	string Work_phone;
-	string Cellphone;
-	string Info; 
-	string Prof = {
-		"  O \n"
-	    " (_) " };
-	
-	if (switch_on1 == '1') {
-		cout << " ПІБ --> ";
-		cin >> Name;
-		cout << " Домашній телефон --> ";
-		cin >> Home_phone;
-		cout << " Робочій телефон --> ";
-		cin >> Work_phone;
-		cout << " Мобільний телефон --> ";
-		cin >> Cellphone;
-		cout << " Додаткова інформація --> ";
-		cin >> Info;
-		phone_book->set_Name(Name);
-		phone_book->set_HomePhone(Home_phone);
-		phone_book->set_WorkPhone(Work_phone);
-		phone_book->set_Cellphone(Cellphone);
-		phone_book->set_Info(Info);
-		cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-		cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-		cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-		cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-		cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-	}
-	system("pause");
-	system("cls");
-	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
-	Print_Phanebookk(phone_book);
-}
+#include"Print.h"
 
 int main() {
 
@@ -213,6 +10,8 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
+	int i = 0;
+	int a = 0;
 	char switch_on;
 	do
 	{
@@ -222,7 +21,7 @@ int main() {
 		cout << "\n --> ";
 		switch_on = _getch();
 		system("cls");
-		cout << endl;
+		cout << endl; 
 
 		switch (switch_on)
 		{
@@ -273,36 +72,57 @@ int main() {
 			system("pause");
 		}break;
 		case '4': {
+
 			char switch_on1 = '0';
 			Phone_book* phone_book = new Phone_book;
+			cout << phone_book->get_Name() << endl;
 			do
 			{
-				Print_Phanebookk(phone_book);
+				Print_Phanebookk(phone_book,i,a);
 				menu->MenuPhone();
 				cout << "-->";
 				switch_on1 = _getch();
-				cout << endl;
+
+				system("cls");
+
 				switch (switch_on1)
 				{
 				case '1':
 				{
-					Print_Phanebook(phone_book, switch_on1);
+					Print_Phanebook(phone_book, i++, a);
 					system("pause");
+					system("cls");
 				}break;
 				case '2':
 				{
+					if (i >= 1) {
+						menu->DeleteMenu1();
+						cout << "Введіть контакт який хочете видалитит -->";
+						cin >> a;
+					}
+					else {
+						menu->DeleteMenu();
+						cout << "Введіть контакт який хочете видалитит -->";
+						cin >> a;
+					}
 					system("pause");
+					system("cls");
 				}break;
 				case '3':
-				{
+				{ 
+					string PIB;
+					cout << " Введіть контакт який хочете знайти --> ";
+					cin >> PIB;
+					Print_PIB(phone_book, PIB);
 					system("pause");
+					system("cls");
+
 				}break;
 				default:
 					break;
 				}
 			} while (switch_on1 != '0');
 
-			system("pause");
 		}break;
 		default:
 			break;
