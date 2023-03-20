@@ -24,6 +24,9 @@
   <ItemGroup>
     <ClInclude Include="Library.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="PointProvider.h" />
+    <ClInclude Include="screens.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
