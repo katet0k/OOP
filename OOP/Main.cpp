@@ -1,5 +1,5 @@
 #include"menu.h"
-
+#include"Classes.h"
 int main() {
 
 	SetConsoleCP(1251);

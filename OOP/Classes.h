@@ -1,0 +1,7 @@
+
+class Overcoat {
+private:
+
+public:
+
+};
