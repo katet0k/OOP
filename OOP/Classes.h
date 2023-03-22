@@ -1,23 +1,42 @@
 #include"library.h"
-
 class Geometry {
-
 private:
-    double S;
-    double h;
-    double b;
+    static int count;
+
 public:
-    void set_h(double h) {
-        cout << "¬вед≥ть h --> ";
-        cin >> h;
-        this->h = h;
+    static float triangleArea(float base, float height) {
+        count++;
+        return 0.5 * base * height;
     }
-    void set_b(double b) {
-        cout << "¬вед≥ть b --> ";
-        cin >> b;
-        this->b = b;
+
+    static float triangleArea(float a, float b, float c) {
+        count++;
+        float s = (a + b + c) / 2.0;
+        return sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    static float rectangleArea(float width, float height) {
+        count++;
+        return width * height;
+    }
+
+    static float squareArea(float side) {
+        count++;
+        return side * side;
+    }
+
+    static float rhombusArea(float diagonal1, float diagonal2) {
+        count++;
+        return 0.5 * diagonal1 * diagonal2;
+    }
+
+    static int getCount() {
+        return count;
     }
 };
+
+int Geometry::count = 0;
+
 
 class Student {
 private:
@@ -172,4 +191,45 @@ public:
         set_x(x);
         set_y(y);
     }
+}; 
+class String {
+private:
+    char* str;
+    int length;
+    static int count;
+
+public:
+    String() : String(80) {}
+    String(int len) : str(new char[len]), length(len) {
+        count++;
+    }
+    String(const char* s) : str(new char[strlen(s) + 1]), length(strlen(s)) {
+        strcpy_s(str, strlen(s) + 1, s);
+        count++;
+    }
+    String(const String& other) : str(new char[other.length + 1]), length(other.length) {
+        strcpy_s(str, other.length + 1, other.str);
+        count++;
+    }
+    ~String() {
+        delete[] str;
+        count--;
+    }
+
+    static int getCount() {
+        return count;
+    }
+
+    void input() {
+        cout << "Enter a string: ";
+        cin.getline(str, length);
+        length = strlen(str);
+    }
+
+    void output() const {
+        cout << str << endl;
+    }
 };
+
+
+int String::count = 0;
