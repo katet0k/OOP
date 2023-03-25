@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="application.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library.h" />
+    <ClInclude Include="Librery.h" />
     <ClInclude Include="menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
