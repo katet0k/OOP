@@ -1,4 +1,4 @@
-#include<iostream>
-#include<Windows.h>
-
+#include <iostream>
+#include <string>
+#include <Windows.h>
 using namespace std;

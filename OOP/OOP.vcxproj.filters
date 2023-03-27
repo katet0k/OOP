@@ -9,5 +9,10 @@
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="application.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Library.h" />
+    <ClInclude Include="menu.h" />
   </ItemGroup>
 </Project>
