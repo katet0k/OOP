@@ -192,6 +192,7 @@ public:
         set_y(y);
     }
 }; 
+
 class String {
 private:
     char* str;
