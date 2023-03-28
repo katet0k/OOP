@@ -1,85 +1,61 @@
-#include"library.h"
+#include "Library.h"
 
 class Person {
 private:
-    string surname = "Костюченко Катерина Вадимівна";
-    string date_of_birth = "08.06.2000";
-    string contact_phone = "097 368 02 37";
-    string city = "Вінниця";
-    string country = "Україна";
+     string name;
+     string surname;
+     string patronymic;
 public:
-    void set_surname(string s) {
-        this->surname = s;
-    }
-    void set_date_of_birth(string d) {
-        this->date_of_birth = d;
-    }
-    void set_contact_phone(string c) {
-        this->contact_phone = c;
-    }
-    void set_city(string c) {
-        this->city = c;
-    }
-    void set_country(string c) {
-        this->country = c;
-    }
-
-    string get_surname() {
-        return surname;
-    }
-    string get_date_of_birth() {
-        return date_of_birth;
-    }
-    string get_contact_phone() {
-        return contact_phone;
-    }
-    string get_city() {
-        return city;
-    }
-    string get_country() {
-        return country;
-    }
-
-    Person() {
-        set_surname(surname);
-        set_date_of_birth(date_of_birth);
-        set_contact_phone(contact_phone);
-        set_city(city);
-        set_country(country);
-    }
-
-    Person(string surname, string date_of_birth, string contact_phone, string city, string country) {
-        set_surname(surname);
-        set_date_of_birth(date_of_birth);
-        set_contact_phone(contact_phone);
-        set_city(city);
-        set_country(country);
-    }
+    Person(const string& name, const string& surname, const string& patronymic)
+        : name(name), surname(surname), patronymic(patronymic) {}
+    Person(const Person& person)
+        : name(person.name), surname(person.surname), patronymic(person.patronymic) {}
+    ~Person() {}
+    string getFullName() const { return surname + " " + name + " " + patronymic; }
 };
+
 class Apartment {
 private:
-    Person* person;
-    int k;
+    vector<Person*> residents;
 public:
-    void set_k(int k) {
-            this->k = k;
+    Apartment() {}
+    Apartment(const Apartment& apartment) : residents(apartment.residents.size()) {
+        for (size_t i = 0; i < apartment.residents.size(); ++i) {
+            residents[i] = new Person(*apartment.residents[i]);
+        }
     }
-    int get_k() {
-            return k; 
+    ~Apartment() {
+        for (auto& person : residents) {
+            delete person;
+        }
     }
-
-    Apartment() {
-        set_k(k);
-    }
-    Apartment(int k) {
-        set_k(k);
-    }
-
+    void addResident(Person* person) { residents.push_back(person); }
+    size_t getNumResidents() const { return residents.size(); }
 };
+
 class House {
 private:
-    Apartment* apartment;
-
+    vector<Apartment*> apartments;
 public:
-
+    House() {}
+    House(const House& house) : apartments(house.apartments.size()) {
+        for (size_t i = 0; i < house.apartments.size(); ++i) {
+            apartments[i] = new Apartment(*house.apartments[i]);
+        }
+    }
+    ~House() {
+        for (auto& apartment : apartments) {
+            delete apartment;
+        }
+    }
+    void addApartment(Apartment* apartment) { apartments.push_back(apartment); }
+    size_t getNumApartments() const { return apartments.size(); }
+    size_t getNumResidents() const {
+        size_t numResidents = 0;
+        for (auto& apartment : apartments) {
+            numResidents += apartment->getNumResidents();
+        }
+        return numResidents;
+    }
 };
+

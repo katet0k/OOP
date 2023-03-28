@@ -1,62 +1,40 @@
 #include"menu.h"
 #include"Classes.h"
 
-void Print_Person(Person* person) {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	cout << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " ПІБ  _______________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << person->get_surname() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Дата народження  ___________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << person->get_date_of_birth() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Контактний телефон _________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << person->get_contact_phone() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Місто  _____________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << person->get_city() << endl;
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Країна  ____________________________ ";
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
-	cout << person->get_country() << endl;
-}
-void Print_Apartment(Apartment* apartment) {
-
-	for (size_t i = 0; i < 3; i++)
-	{
-		int k = rand() % 60 + 1;
-		apartment->set_k(k);
-		if (apartment->get_k() < 10) {
-			cout << " Квартира - 0" << apartment->get_k() << endl;
-		}
-		else {
-			cout << " Квартира - " << apartment->get_k() << endl;
-		}
-	}
-}
 int main() {
 
-	srand(time(0));
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
+    // Create some people
+    Person* person1 = new Person("John", "Doe", "Smith");
+    Person* person2 = new Person("Mary", "Johnson", "Jones");
+    Person* person3 = new Person("Bob", "Brown", "Taylor");
 
-	Menu* menu = new Menu;
+    // Create some apartments
+    Apartment* apartment1 = new Apartment();
+    apartment1->addResident(person1);
+    apartment1->addResident(person2);
 
-	Person* person = new Person;
-	Print_Person(person);
+    Apartment* apartment2 = new Apartment();
+    apartment2->addResident(person3);
 
-	cout << endl;
+    // Create a house and add the apartments
+    House* house = new House();
+    house->addApartment(apartment1);
+    house->addApartment(apartment2);
 
-	Apartment* apartment = new Apartment;
-	Print_Apartment(apartment);
-	return 0;
+    // Print the number of residents in the house
+    cout << "Number of residents in the house: " << house->getNumResidents() << endl;
+
+    // Cleanup
+    delete house;
+    delete person1;
+    delete person2;
+    delete person3;
+
+    return 0;
 }
