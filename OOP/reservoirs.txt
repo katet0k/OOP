@@ -1,0 +1,10 @@
+Lake Ontario,311,85,244
+Lake Superior,563,257,406
+Lake Erie,388,92,64
+Lake Huron,332,229,229
+Lake Michigan,494,190,281
+Great Salt Lake,120,48,10
+Lake Tahoe,35,19,501
+Lake Baikal,636,80,1637
+Caspian Sea,1199,393,1025
+Dead Sea,67,18,304

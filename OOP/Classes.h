@@ -1,87 +1,112 @@
 #include"Library.h"
 
-class Reservoir {
-private:
-    string name;
-    float width;
-    float length;
-    float depth;
+class Book {
 public:
-    // конструктори
-    Reservoir() {}
-    Reservoir(const string& _name, float _width, float _length, float _depth)
-        : name(_name), width(_width), length(_length), depth(_depth) {}
-    Reservoir(const Reservoir& other) : name(other.name), width(other.width), length(other.length), depth(other.depth) {}
+    explicit Book(const std::string& author, const std::string& title,
+        const std::string& publisher, int year, int pages, int quantity)
+        : author_(author), title_(title), publisher_(publisher),
+        year_(year), pages_(pages), quantity_(quantity) {}
 
-    // деструктор
+    const std::string& author() const { return author_; }
+    const std::string& title() const { return title_; }
+    const std::string& publisher() const { return publisher_; }
+    int year() const { return year_; }
+    int pages() const { return pages_; }
+    int quantity() const { return quantity_; }
+
+private:
+    std::string author_;
+    std::string title_;
+    std::string publisher_;
+    int year_;
+    int pages_;
+    int quantity_;
+};
+class Worker {
+public:
+    explicit Worker(const std::string& name, const std::string& position, int startYear, int salary)
+        : name_(name), position_(position), startYear_(startYear), salary_(salary) {}
+
+    const std::string& getName() const { return name_; }
+    const std::string& getPosition() const { return position_; }
+    int getStartYear() const { return startYear_; }
+    int getSalary() const { return salary_; }
+
+private:
+    std::string name_;
+    std::string position_;
+    int startYear_;
+    int salary_;
+};
+class Reservoir {
+public:
+    explicit Reservoir(const std::string& name = "", double length = 0, double width = 0, double maxDepth = 0)
+        : name_(name), length_(length), width_(width), maxDepth_(maxDepth) {}
+
+    Reservoir(const Reservoir& other) : name_(other.name_), length_(other.length_), width_(other.width_), maxDepth_(other.maxDepth_) {}
+
     ~Reservoir() {}
 
-    // методи для визначення обсягу та площі
-    float getVolume() const { return width * length * depth; }
-    float getSurfaceArea() const { return width * length; }
+    double approximateVolume() const { return length_ * width_ * maxDepth_; }
 
-    // метод для порівняння типів водойм
+    double waterSurfaceArea() const { return length_ * width_; }
+
     bool sameType(const Reservoir& other) const {
-        // вважаємо, що водойми одного типу, якщо вони мають однакову глибину
-        return depth == other.depth;
+        if (this->isSea() && other.isSea()) {
+            return true;
+        }
+        else if (this->isLake() && other.isLake()) {
+            return true;
+        }
+        else if (this->isPond() && other.isPond()) {
+            return true;
+        }
+        return false;
     }
 
-    // метод для порівняння площі водних поверхонь
     bool operator<(const Reservoir& other) const {
-        return getSurfaceArea() < other.getSurfaceArea();
+        return this->waterSurfaceArea() < other.waterSurfaceArea();
     }
 
-    // метод копіювання
     Reservoir& operator=(const Reservoir& other) {
-        if (this == &other) return *this;
-        name = other.name;
-        width = other.width;
-        length = other.length;
-        depth = other.depth;
+        if (this != &other) {
+            name_ = other.name_;
+            length_ = other.length_;
+            width_ = other.width_;
+            maxDepth_ = other.maxDepth_;
+        }
         return *this;
     }
 
-    // методи set та get
-    void setName(const string& _name) { name = _name; }
-    string getName() const { return name; }
-    void setWidth(float _width) { width = _width; }
-    float getWidth() const { return width; }
-    void setLength(float _length) { length = _length; }
-    float getLength() const { return length; }
-    void setDepth(float _depth) { depth = _depth; }
-    float getDepth() const { return depth; }
+    const std::string& getName() const { return name_; }
+    void setName(const std::string& name) { name_ = name; }
 
-    // функція для запису об'єкта в текстовий файл
-    void saveToTextFile(ofstream& fout) const {
-        fout << name << " " << width << " " << length << " " << depth << endl;
+    double getLength() const { return length_; }
+    void setLength(double length) { length_ = length; }
+
+    double getWidth() const { return width_; }
+    void setWidth(double width) { width_ = width; }
+
+    double getMaxDepth() const { return maxDepth_; }
+    void setMaxDepth(double maxDepth) { maxDepth_ = maxDepth; }
+
+    bool isSea() const { return maxDepth_ >= 200; }
+    bool isLake() const { return maxDepth_ >= 6 && maxDepth_ < 200; }
+    bool isPond() const { return maxDepth_ < 6; }
+
+    void display() const {
+        std::cout << "Reservoir Name: " << name_ << std::endl;
+        std::cout << "Length: " << length_ << " meters" << std::endl;
+        std::cout << "Width: " << width_ << " meters" << std::endl;
+        std::cout << "Max Depth: " << maxDepth_ << " meters" << std::endl;
+        std::cout << "Approximate Volume: " << approximateVolume() << " cubic meters" << std::endl;
+        std::cout << "Water Surface Area: " << waterSurfaceArea() << " square meters" << std::endl;
+        std::cout << std::endl;
     }
 
-    // функція для запису об'єкта в бінарний файл
-    void saveToBinaryFile(ofstream& fout) const {
-        fout.write((char*)&width, sizeof(width));
-        fout.write((char*)&length, sizeof(length));
-        fout.write((char*)&depth, sizeof(depth));
-        int nameLength = name.length();
-        fout.write((char*)&nameLength, sizeof(nameLength));
-        fout.write(name.c_str(), nameLength);
-    }
-
-    // функція для зчитування об'єкта з текстового файлу
-    void loadFromTextFile(ifstream& fin) {
-        fin >> name >> width >> length >> depth;
-    }
-
-    // функція для зчитування об'єкта з бінарного файлу
-    void loadFromBinaryFile(ifstream& fin) {
-        fin.read((char*)&width, sizeof(width));
-        fin.read((char*)&length, sizeof(length));
-        fin.read((char*)&depth, sizeof(depth));
-        int nameLength;
-        fin.read((char*)&nameLength, sizeof(nameLength));
-        char* buffer = new char[nameLength + 1];
-        fin.read(buffer, nameLength);
-        buffer[nameLength] = '\0';
-        name = buffer;
-        delete[] buffer;
-    }
+private:
+    std::string name_;
+    double length_;
+    double width_;
+    double maxDepth_;
 };
