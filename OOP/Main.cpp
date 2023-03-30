@@ -1,77 +1,50 @@
 #include"menu.h"
 #include"Classes.h"
 
-void Print_Worker(Worker * worker)
-{
-    cout << " PIB: " << worker->get_Name() << endl;
-    cout << " Position: " << worker->get_Position() << endl;
-    cout << " Year: " << worker->get_Year() << endl;
-    cout << " Salary: " << worker->get_Salary() << endl;
-    cout << endl;
-}
+int main() {
+    // створюємо об'єкт класу Reservoir
+    Reservoir r1("Lake One", 1000, 2000, 10);
+    // виводимо інформацію про об'єкт
+    cout << "Name: " << r1.getName() << endl;
+    cout << "Width: " << r1.getWidth() << endl;
+    cout << "Length: " << r1.getLength() << endl;
+    cout << "Depth: " << r1.getDepth() << endl;
+    cout << "Volume: " << r1.getVolume() << endl;
+    cout << "Surface area: " << r1.getSurfaceArea() << endl;
 
-int main()
-{
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    // порівнюємо об'єкт з собою ж та з іншим об'єктом
+    cout << "Same type: " << r1.sameType(r1) << endl;
+    Reservoir r2("Lake Two", 500, 500, 10);
+    cout << "Same type: " << r1.sameType(r2) << endl;
 
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
+    // записуємо об'єкт у текстовий файл
+    ofstream fout("reservoir.txt");
+    r1.saveToTextFile(fout);
+    fout.close();
 
-    Menu* menu = new Menu;
-    menu->Vmenu();
+    // зчитуємо об'єкт з текстового файлу
+    ifstream fin("reservoir.txt");
+    Reservoir r3;
+    r3.loadFromTextFile(fin);
+    fin.close();
+    cout << "Name: " << r3.getName() << endl;
+    cout << "Width: " << r3.getWidth() << endl;
+    cout << "Length: " << r3.getLength() << endl;
+    cout << "Depth: " << r3.getDepth() << endl;
 
-    char switch_on;
-    switch_on = _getch();
+    // записуємо об'єкт у бінарний файл
+    ofstream fbout("reservoir.bin", ios::binary);
+    r1.saveToBinaryFile(fbout);
+    fbout.close();
 
-    do {
-        switch (switch_on)
-        {
-        case '1':
-        {
-            const int Books = 5;
-            Book books[Books] = {
-              Book("J.K. Rowling", "Harry Potter and the Philosopher's Stone", "Bloomsbury Publishing", 1997, 500, 223),
-              Book("J.K. Rowling", "Harry Potter and the Chamber of Secrets", "Bloomsbury Publishing", 1998, 600, 251),
-              Book("J.R.R. Tolkien", "The Hobbit", "George Allen & Unwin", 1937, 300, 310),
-              Book("J.R.R. Tolkien", "The Lord of the Rings", "George Allen & Unwin", 1954, 1500, 1000),
-              Book("George Orwell", "1984", "Secker and Warburg", 1949, 1000, 328),
-            };
-            string author_name = "J.K. Rowling";
-            cout << "Books by " << author_name << ":" << endl;
-            for (const auto& book : books) {
-                if (book.getAuthor() == author_name) {
-                    book.d();
-                    cout << endl;
-                }
-            }
-            string publisher_name = "George Allen & Unwin";
-            cout << "Books published by " << publisher_name << ":" << endl;
-            for (const auto& book : books) {
-                if (book.getPublisher() == publisher_name) {
-                    book.d();
-                    cout << endl;
-                }
-            }
-            int year_published = 1950;
-            cout << "Books published after " << year_published << ":" << endl;
-            for (const auto& book : books) {
-                if (book.getYear() > year_published) {
-                    book.d();
-                    cout << endl;
-                }
-            } 
+    // зчитуємо об'єкт з бінарного файлу
+    ifstream fbin("reservoir.bin", ios::binary);
+    Reservoir r4;
+    r4.loadFromBinaryFile(fbin);
+    fbin.close();
+    cout << "Width: " << r4.getWidth() << endl;
+    cout << "Length: " << r4.getLength() << endl;
+    cout << "Depth: " << r4.getDepth() << endl;
 
-        }break;
-        case '2': {
-            Worker* worker = new Worker;
-        }break;
-        default:
-            break;
-        }
-
-    } while (switch_on != '0');
-
-   
     return 0;
 }
