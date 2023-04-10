@@ -19,13 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="application.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cat.h" />
+    <ClInclude Include="Dog.h" />
     <ClInclude Include="Library.h" />
-    <ClInclude Include="Librery.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="Parrot.h" />
+    <ClInclude Include="Pet.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
