@@ -3,43 +3,43 @@ void Print_Student(Student* student) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	cout << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " ПІБ  _______________________________ ";
+	cout << " РџР†Р‘  _______________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_surname() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Дата народження  ___________________ ";
+	cout << " Р”Р°С‚Р° РЅР°СЂРѕРґР¶РµРЅРЅСЏ  ___________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_date_of_birth() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Контактний телефон _________________ ";
+	cout << " РљРѕРЅС‚Р°РєС‚РЅРёР№ С‚РµР»РµС„РѕРЅ _________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_contact_phone() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Місто  _____________________________ ";
+	cout << " РњС–СЃС‚Рѕ  _____________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_city() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Країна  ____________________________ ";
+	cout << " РљСЂР°С—РЅР°  ____________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_country() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Місто та країна" << endl;
-	cout << " де знаходиться навчальний заклад ___ ";
+	cout << " РњС–СЃС‚Рѕ С‚Р° РєСЂР°С—РЅР°" << endl;
+	cout << " РґРµ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РЅР°РІС‡Р°Р»СЊРЅРёР№ Р·Р°РєР»Р°Рґ ___ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_city_and_country_institution() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Номер групи ________________________ ";
+	cout << " РќРѕРјРµСЂ РіСЂСѓРїРё ________________________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_number_groups() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 8));
-	cout << " Назва навчального закладу  _________ ";
+	cout << " РќР°Р·РІР° РЅР°РІС‡Р°Р»СЊРЅРѕРіРѕ Р·Р°РєР»Р°РґСѓ  _________ ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << student->get_name_of_the_institution() << endl;
 
 }
 void Print_Tochka(Tochka* tochka) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	cout << " Ваші координати -- > ";
+	cout << " Р’Р°С€С– РєРѕРѕСЂРґРёРЅР°С‚Рё -- > ";
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << tochka->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
@@ -55,7 +55,7 @@ void Print_Tochka(Tochka* tochka) {
 void Print_Drib(Drib* drib) {
 
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	//додавання 
+	//РґРѕРґР°РІР°РЅРЅСЏ 
 	cout << endl;
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
@@ -67,7 +67,7 @@ void Print_Drib(Drib* drib) {
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << drib->get_res1() << endl;
 
-	//віднімання 
+	//РІС–РґРЅС–РјР°РЅРЅСЏ 
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << " - ";
@@ -78,7 +78,7 @@ void Print_Drib(Drib* drib) {
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << drib->get_res2() << endl;
 
-	//множення
+	//РјРЅРѕР¶РµРЅРЅСЏ
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << " * ";
@@ -89,7 +89,7 @@ void Print_Drib(Drib* drib) {
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 	cout << drib->get_res3() << endl;
 
-	//ділення 
+	//РґС–Р»РµРЅРЅСЏ 
 	cout << drib->get_x();
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 9));
 	cout << " / ";
@@ -112,11 +112,11 @@ void Print_Kontakt(Phone_book* phone_book, string Name, string Home_phone, strin
 	phone_book->set_WorkPhone(Work_phone);
 	phone_book->set_Cellphone(Cellphone);
 	phone_book->set_Info(Info);
-	cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-	cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-	cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-	cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-	cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
+	cout << Prof << "РџР†Р‘ : " << phone_book->get_Name() << endl;
+	cout << "     Р”РѕРјР°С€РЅС–Р№ С‚РµР»РµС„РѕРЅ : " << phone_book->get_HomePhone() << endl;
+	cout << "     Р РѕР±РѕС‡С–Р№ С‚РµР»РµС„РѕРЅ : " << phone_book->get_WorkPhone() << endl;
+	cout << "     РњРѕР±С–Р»СЊРЅРёР№ С‚РµР»РµС„РѕРЅ : " << phone_book->get_Cellphone() << endl;
+	cout << "     Р”РѕРґР°С‚РєРѕРІР° С–РЅС„РѕСЂРјР°С†С–СЏ : " << phone_book->get_Info() << endl;
 
 }
 void Print_Phanebook(Phone_book* phone_book, int i, int a) {
@@ -130,24 +130,24 @@ void Print_Phanebook(Phone_book* phone_book, int i, int a) {
 		" (_) " };
 
 	if (i == 0) {
-		cout << " ПІБ --> ";
+		cout << " РџР†Р‘ --> ";
 		cin >> Name;
-		cout << " Домашній телефон --> ";
+		cout << " Р”РѕРјР°С€РЅС–Р№ С‚РµР»РµС„РѕРЅ --> ";
 		cin >> Home_phone;
-		cout << " Робочій телефон --> ";
+		cout << " Р РѕР±РѕС‡С–Р№ С‚РµР»РµС„РѕРЅ --> ";
 		cin >> Work_phone;
-		cout << " Мобільний телефон --> ";
+		cout << " РњРѕР±С–Р»СЊРЅРёР№ С‚РµР»РµС„РѕРЅ --> ";
 		cin >> Cellphone;
-		cout << " Додаткова інформація --> ";
+		cout << " Р”РѕРґР°С‚РєРѕРІР° С–РЅС„РѕСЂРјР°С†С–СЏ --> ";
 		cin >> Info;
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (i >= 1) {
-		cout << Prof << "ПІБ : " << phone_book->get_Name() << endl;
-		cout << "     Домашній телефон : " << phone_book->get_HomePhone() << endl;
-		cout << "     Робочій телефон : " << phone_book->get_WorkPhone() << endl;
-		cout << "     Мобільний телефон : " << phone_book->get_Cellphone() << endl;
-		cout << "     Додаткова інформація : " << phone_book->get_Info() << endl;
+		cout << Prof << "РџР†Р‘ : " << phone_book->get_Name() << endl;
+		cout << "     Р”РѕРјР°С€РЅС–Р№ С‚РµР»РµС„РѕРЅ : " << phone_book->get_HomePhone() << endl;
+		cout << "     Р РѕР±РѕС‡С–Р№ С‚РµР»РµС„РѕРЅ : " << phone_book->get_WorkPhone() << endl;
+		cout << "     РњРѕР±С–Р»СЊРЅРёР№ С‚РµР»РµС„РѕРЅ : " << phone_book->get_Cellphone() << endl;
+		cout << "     Р”РѕРґР°С‚РєРѕРІР° С–РЅС„РѕСЂРјР°С†С–СЏ : " << phone_book->get_Info() << endl;
 
 	}
 }
@@ -169,21 +169,21 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 777 66 62";
 		Work_phone = "098 777 66 61";
 		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Daria";
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Tom";
 		Home_phone = "098 234 45 12";
 		Work_phone = "098 468 66 34";
 		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (a == 1 && i >= 1) {
@@ -192,21 +192,21 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 777 66 62";
 		Work_phone = "098 777 66 61";
 		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Daria";
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Tom";
 		Home_phone = "098 234 45 12";
 		Work_phone = "098 468 66 34";
 		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (a == 2 && i >= 1) {
@@ -219,14 +219,14 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Tom";
 		Home_phone = "098 234 45 12";
 		Work_phone = "098 468 66 34";
 		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (a == 3 && i >= 1) {
@@ -237,14 +237,14 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 777 66 62";
 		Work_phone = "098 777 66 61";
 		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Daria";
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 	}
@@ -254,14 +254,14 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Tom";
 		Home_phone = "098 234 45 12";
 		Work_phone = "098 468 66 34";
 		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (a == 2 && i != 1) {
@@ -269,14 +269,14 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 777 66 62";
 		Work_phone = "098 777 66 61";
 		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Tom";
 		Home_phone = "098 234 45 12";
 		Work_phone = "098 468 66 34";
 		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (a == 3 && i != 1) {
@@ -284,14 +284,14 @@ void Print_Phanebookk(Phone_book* phone_book, int i, int a) {
 		Home_phone = "098 777 66 62";
 		Work_phone = "098 777 66 61";
 		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 		Name = "Daria";
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 
 	}
@@ -309,7 +309,7 @@ void Print_PIB(Phone_book* phone_book, string PIB) {
 		Home_phone = "098 777 66 62";
 		Work_phone = "098 777 66 61";
 		Cellphone = "098 777 66 60";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	else if (PIB == "Daria") {
@@ -317,7 +317,7 @@ void Print_PIB(Phone_book* phone_book, string PIB) {
 		Home_phone = "098 687 98 09";
 		Work_phone = "096 686 66 98";
 		Cellphone = "098 789 34 53";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	if (PIB == "Tom") {
@@ -325,10 +325,10 @@ void Print_PIB(Phone_book* phone_book, string PIB) {
 		Home_phone = "098 234 45 12";
 		Work_phone = "098 468 66 34";
 		Cellphone = "097 753 43 33";
-		Info = "Немає додаткової інформації";
+		Info = "РќРµРјР°С” РґРѕРґР°С‚РєРѕРІРѕС— С–РЅС„РѕСЂРјР°С†С–С—";
 		Print_Kontakt(phone_book, Name, Home_phone, Work_phone, Cellphone, Info);
 	}
 	else {
-		cout << "Такого контакту не існує " << endl;
+		cout << "РўР°РєРѕРіРѕ РєРѕРЅС‚Р°РєС‚Сѓ РЅРµ С–СЃРЅСѓС” " << endl;
 	}
 }
