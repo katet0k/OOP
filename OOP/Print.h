@@ -1,4 +1,4 @@
-﻿
+﻿using namespace S;
 void Print_Student(Student* student) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	cout << endl;
@@ -37,6 +37,7 @@ void Print_Student(Student* student) {
 	cout << student->get_name_of_the_institution() << endl;
 
 }
+using namespace T;
 void Print_Tochka(Tochka* tochka) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	cout << " Ваші координати -- > ";
@@ -52,6 +53,7 @@ void Print_Tochka(Tochka* tochka) {
 	cout << tochka->get_z() << endl;
 	SetConsoleTextAttribute(hConsole, WORD(0 << 0 | 7));
 }
+using namespace D;
 void Print_Drib(Drib* drib) {
 
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -101,6 +103,7 @@ void Print_Drib(Drib* drib) {
 	cout << drib->get_res4() << endl;
 
 }
+using namespace P;
 void Print_Kontakt(Phone_book* phone_book, string Name, string Home_phone, string Work_phone, string Cellphone, string Info) {
 
 	string Prof = {
