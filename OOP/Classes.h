@@ -2,14 +2,14 @@
 
 class Student {
 private:
-    string* surname = new string{ "Костюченко Катерина Вадимівна" };
+    string* surname = new string{ "РљРѕСЃС‚СЋС‡РµРЅРєРѕ РљР°С‚РµСЂРёРЅР° Р’Р°РґРёРјС–РІРЅР°" };
     string date_of_birth = "08.06.2000";
     string contact_phone = "097 368 02 37";
-    string city = "Вінниця";
-    string country = "Україна";
-    string name_of_the_institution = "Комп'ютерна Академія STEP";
-    string city_and_country_institution = "Вінниця,Україна";
-    string number_groups = "БВ211";
+    string city = "Р’С–РЅРЅРёС†СЏ";
+    string country = "РЈРєСЂР°С—РЅР°";
+    string name_of_the_institution = "РљРѕРјРї'СЋС‚РµСЂРЅР° РђРєР°РґРµРјС–СЏ STEP";
+    string city_and_country_institution = "Р’С–РЅРЅРёС†СЏ,РЈРєСЂР°С—РЅР°";
+    string number_groups = "Р‘Р’211";
 public:
    
     inline string get_surname() {
@@ -48,17 +48,17 @@ private:
     int x, y, z;
 public:
     void set_x(int X) {
-        cout << " Введіть x -- > ";
+        cout << " Р’РІРµРґС–С‚СЊ x -- > ";
         cin >> X;
         this->x = X;
     }
     void set_y(int Y) {
-        cout << " Введіть y -- > ";
+        cout << " Р’РІРµРґС–С‚СЊ y -- > ";
         cin >> Y;
         this->y = Y;
     }
     void set_z(int Z) {
-        cout << " Введіть z -- > ";
+        cout << " Р’РІРµРґС–С‚СЊ z -- > ";
         cin >> Z;
         this->z = Z;
     }
@@ -89,13 +89,13 @@ private:
 public:
     void set_x(double X)
     {
-        cout << "Введіть число --> ";
+        cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ --> ";
         cin >> X;
         this->x = X;
     }
     void set_y(double Y)
     {
-        cout << "Введіть число --> ";
+        cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ --> ";
         cin >> Y;
         this->y = Y;
     }
