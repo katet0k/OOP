@@ -1,3 +1,4 @@
+#include "Library.h"
 
 class Student {
 private:
@@ -67,85 +68,167 @@ public:
         return age;
     }
 };
+class Human {
+private:
+    char* name;
+    int age;
 
-class Building {
 public:
     // Конструктор переміщення
-    Building(Building&& other) {
-        // Переміщуємо вміст полів з об'єкта other в поточний об'єкт
-        // Після цього, об'єкт other буде недійсним
-        m_address = other.m_address;
-        m_number_of_floors = other.m_number_of_floors;
-        other.m_address = nullptr;
-        other.m_number_of_floors = 0;
+    Human(Human&& other) {
+        name = other.name;
+        age = other.age;
+
+        other.name = nullptr;
+        other.age = 0;
     }
 
     // Конструктор за замовчуванням
-    Building() {
-        m_address = nullptr;
-        m_number_of_floors = 0;
-    }
+    Human() : name(nullptr), age(0) {}
 
     // Деструктор
-    ~Building() {
-        delete[] m_address;
+    ~Human() {
+        delete[] name;
     }
 
-private:
-    char* m_address; // Адреса будинку
-    int m_number_of_floors; // Кількість поверхів
-};
+    // Методи доступу до полів класу
+    const char* getName() const {
+        return name;
+    }
 
+    int getAge() const {
+        return age;
+    }
+
+    void setName(const char* newName) {
+        delete[] name;
+        name = new char[strlen(newName) + 1];
+        strcpy(name, newName);
+    }
+
+    void setAge(int newAge) {
+        age = newAge;
+    }
+};
 class Apartment {
 private:
-    int m_number; // Номер квартири
-    int m_number_of_rooms; // Кількість кімнат
+    int number;
+    int floor;
+    Human* owner;
+
 public:
     // Конструктор переміщення
     Apartment(Apartment&& other) {
-        // Переміщуємо вміст полів з об'єкта other в поточний об'єкт
-        // Після цього, об'єкт other буде недійсним
-        m_number = other.m_number;
-        m_number_of_rooms = other.m_number_of_rooms;
-        other.m_number = 0;
-        other.m_number_of_rooms = 0;
+        number = other.number;
+        floor = other.floor;
+        owner = other.owner;
+
+        other.number = 0;
+        other.floor = 0;
+        other.owner = nullptr;
     }
 
     // Конструктор за замовчуванням
-    Apartment() {
-        m_number = 0;
-        m_number_of_rooms = 0;
-    }
+    Apartment() : number(0), floor(0), owner(nullptr) {}
 
     // Деструктор
-    ~Apartment() {}
+    ~Apartment() {
+        delete owner;
+    }
 
+    // Методи доступу до полів класу
+    int getNumber() const {
+        return number;
+    }
+
+    int getFloor() const {
+        return floor;
+    }
+
+    Human* getOwner() const {
+        return owner;
+    }
+
+    void setNumber(int newNumber) {
+        number = newNumber;
+    }
+
+    void setFloor(int newFloor) {
+        floor = newFloor;
+    }
+
+    void setOwner(Human* newOwner) {
+        delete owner;
+        owner = newOwner;
+    }
 };
-
-class Person {
+class House {
 private:
-    char* m_name; // Ім'я людини
-    int m_age; // Вік людини
+    int address;
+    Apartment* apartments;
+    int apartmentCount;
+
 public:
     // Конструктор переміщення
-    Person(Person&& other) {
-        // Переміщуємо вміст полів з об'єкта other в поточний об'єкт
-        // Після цього, об'єкт other буде недійсним
-        m_name = other.m_name;
-        m_age = other.m_age;
-        other.m_name = nullptr;
-        other.m_age = 0;
+    House(House&& other) {
+        address = other.address;
+        apartments = other.apartments;
+        apartmentCount = other.apartmentCount;
+
+        other.address = 0;
+        other.apartments = nullptr;
+        other.apartmentCount = 0;
     }
 
     // Конструктор за замовчуванням
-    Person() {
-        m_name = nullptr;
-        m_age = 0;
-    }
+    House() : address(0), apartments(nullptr), apartmentCount(0) {}
 
     // Деструктор
-    ~Person() {
-        delete[] m_name;
+    ~House() {
+        delete[] apartments;
     }
 
+    // Методи доступу до полів класу
+    int getAddress() const {
+        return address;
+    }
+
+    Apartment* getApartments() const {
+        return apartments;
+    }
+
+    int getApartmentCount() const {
+        return apartmentCount;
+    }
+
+    void setAddress(int newAddress) {
+        address = newAddress;
+    }
+    void setApartments(Apartment* newApartments, int count) {
+        // Deallocate the old apartments array
+       
+
+        // Allocate a new apartments array
+        apartments = new Apartment[count];
+        apartmentCount = count;
+
+        // Copy the new apartments into the new array
+        for (int i = 0; i < count; i++) {
+            apartments[i] = newApartments[i];
+        }
+    }
+    // Додавання квартири до будинку
+    void addApartment(const Apartment& apartment) {
+
+        Apartment* newApartments = new Apartment[apartmentCount + 1];
+
+        for (int i = 0; i < apartmentCount; i++) {
+            newApartments[i] = move(apartments[i]);
+        }
+        newApartments[apartmentCount] = apartment;
+
+
+        apartments = newApartments;
+        apartmentCount++;
+    }
 };

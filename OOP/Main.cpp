@@ -48,6 +48,53 @@ int main() {
 		}break;
 		case '2':
 		{
+			// Створення будинку
+			House house;
+			house.setAddress(1);
+			// Створення людей
+			Human* human1 = new Human();
+			human1->setName("John");
+			human1->setAge(30);
+
+			Human* human2 = new Human();
+			human2->setName("Jane");
+			human2->setAge(25);
+
+			// Створення квартир і додавання їх до будинку
+			Apartment apartment1;
+			apartment1.setNumber(1);
+			apartment1.setFloor(1);
+			apartment1.setOwner(human1);
+
+			house.addApartment(apartment1);
+
+			Apartment apartment2;
+			apartment2.setNumber(2);
+			apartment2.setFloor(2);
+			apartment2.setOwner(human2);
+
+			house.addApartment(apartment2);
+
+			// Виведення інформації про будинок та його квартири
+			std::cout << "House address: " << house.getAddress() << std::endl;
+
+			Apartment* apartments = house.getApartments();
+			int apartmentCount = house.getApartmentCount();
+
+			for (int i = 0; i < apartmentCount; i++) {
+				std::cout << "Apartment number: " << apartments[i].getNumber() << std::endl;
+				std::cout << "Apartment floor: " << apartments[i].getFloor() << std::endl;
+
+				Human* owner = apartments[i].getOwner();
+
+				if (owner != nullptr) {
+					std::cout << "Apartment owner: " << owner->getName() << ", " << owner->getAge() << " years old" << std::endl;
+				}
+			}
+
+			// Вивільнення пам'яті
+			delete human1;
+			delete human2;
 
 
 		}break;
