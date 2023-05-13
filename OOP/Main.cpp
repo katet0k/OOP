@@ -1,4 +1,5 @@
 #include"menu.h"
+#include "Classes.h"
 
 int main() {
 
@@ -10,5 +11,8 @@ int main() {
 
 	Menu* menu = new Menu;
 	menu->Vmenu();
+
+	testSmartUniquePtr();
+	testSmartSharedPtr();
 	return 0;
 }
