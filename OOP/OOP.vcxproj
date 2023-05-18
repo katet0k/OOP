@@ -22,6 +22,7 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Classes.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="menu.h" />
   </ItemGroup>
