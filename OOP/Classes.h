@@ -16,8 +16,8 @@ public:
 
     double simulateAveragePassengerTime() {
         double totalTime = 0.0;
-        int numIterations = 10000;  // Кількість ітерацій для визначення середнього часу
-        srand(static_cast<unsigned>(time(0)));  // Ініціалізація генератора випадкових чисел
+        int numIterations = 10000;  
+        srand(static_cast<unsigned>(time(0)));  
 
         for (int i = 0; i < numIterations; i++) {
             double time = getRandomTime(passengerArrivalRate);
